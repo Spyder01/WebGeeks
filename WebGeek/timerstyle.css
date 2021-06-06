@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Lemonada:wght@300&family=Monoton&display=swap');
+      * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: #333;
+            background-blend-mode: hard-light;
+        }
+        a {
+            position: absolute;
+            top:10px;
+            right:70px;
+            display: inline-block;
+            padding: 15px 30px;
+            color: #f0e00b;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-decoration: none;
+            font-size: 24px;
+            overflow: hidden;
+            transition: 0.2s;
+        }
+        a:hover {
+            color: #fff386;
+            background: #f0e00b;
+            box-shadow: 0 0 10px #f0e00b, 0 0 40px #f0e00b, 0 0 10px #f0e00b;
+            transition-delay: 1s;
+        }
+        a span {
+            position: absolute;
+            display: block;
+        }
+        a span:nth-child(1) {
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #f0e00b);
+        }
+        a:hover span:nth-child(1) {
+            left: 100%;
+            transition: 1s;
+        }
+        a span:nth-child(3) {
+            bottom: 0;
+            right: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(270deg, transparent, #f0e00b);
+        }
+        a:hover span:nth-child(3) {
+            right: 100%;
+            transition: 1s;
+            transition-delay: 0.5s;
+        }
+        a span:nth-child(2) {
+            top: -100%;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #f0e00b);
+        }
+        a:hover span:nth-child(2) {
+            top: 100%;
+            transition: 1s;
+            transition-delay: 0.25s;
+        }
+        a span:nth-child(4) {
+            bottom: -100%;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(360deg, transparent, #f0e00b);
+        }
+        a:hover span:nth-child(4) {
+            bottom: 100%;
+            transition: 1s;
+            transition-delay: 0.75s;
+        }
+        .container {
+            position: absolute;
+            top: 80px;
+            left: 100px;
+            right: 100px;
+            bottom: 80px;
+            background:url(udbhav.jpeg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            box-shadow: 0 50px 50px rgba(0,0,0,0.5),
+                        0 0 0 100px rgba(0,0,0,0.1);
+        }
+        .container h2 {
+            text-align: center;
+            font-size: 10em;
+            line-height: 0.7em;
+            color: #fff;
+            font-family: 'Lemonada', cursive;
+            pointer-events: none;
+            margin-top: -80px;
+        }
+        .container h2 #glow {
+            display: table-cell;
+            margin: 0;
+            padding: 0;
+            animation: animate 0.5s linear infinite;
+        }
+        @keyframes animate {
+            0%,100% {
+                color:#fff;
+                filter: blur(2px);
+                text-shadow: 0 0 10px #d8ca05;
+            }
+            5%,95% {
+                color: rgb(0, 0, 0);
+                filter: blur(0px);
+            }
+        }
+        .container h2 #cap {
+            display: block;
+            font-weight: 300;
+            letter-spacing: 6px;
+            pointer-events: none;
+            font-size: 0.2em;
+            color: #fff;
+        }
+        .countdown{
+            display: flex;
+            margin-top: 50px;
+        }
+        .countdown div {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            pointer-events: none;
+            border-radius: 20px;
+            text-align: center;
+            background: rgb(241, 240, 163);
+            color:#333;
+            margin: 0 15px;
+            font-size: 3em;
+            box-shadow: 0 0 10px;
+            font-weight: 500;
+        }
+        .countdown div::before {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            width: 100%;
+            height: 35px;
+            border-radius: 20px;
+            background: rgb(255, 33, 63);
+            color: rgb(41, 39, 39);
+            font-size: 0.35em;
+            line-height: 35px;
+            font-weight: 300;
+        }
+        .countdown div#day:before {
+            content: 'Days';
+        }
+        .countdown div#hour:before {
+            content: 'Hours';
+        }
+        .countdown div#minute:before {
+            content: 'Minutes';
+        }
+        .countdown div#second:before {
+            content: 'Seconds';
+        }

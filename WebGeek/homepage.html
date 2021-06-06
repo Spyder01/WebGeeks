@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udbhav '21</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div class="bannerVideo" id="slideShow">
+            <video src="1.mp4" autoplay muted loop class="active"></video>
+            <video src="2.mp4" autoplay muted loop></video>
+            <video src="3.mp4" autoplay muted loop></video>
+            <video src="4.mp4" autoplay muted loop></video>
+        </div>
+        <div class="container">
+            <header id="navbar">
+                <a href="#" class="logo"><img src="logo.png" width="150px" height="100px"></a>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="register.html">Volunteer</a></li>
+                </ul>
+                <span class="menuIcon" onclick="toggleMenu()"></span>
+            </header>
+            <div class="content">
+                <div class="bannerText" id="slideShowText">
+                    <div class="active">
+                        <h2>Prayaag</h2>
+                        <p>Dance is the expression of your soul; a seamless coalesce of movement, beauty and grace. So join us in the most dynamic expression of art, Prayaag, where the classical, folk and western dances combine forces</p>
+                    </div>
+                    <div>
+                        <h2>Stand up comedy</h2>
+                        <p>It is said that one must always find a reason to laugh. It may not add years to your life, but will surely add life to your years. Let your sorrows fade in with the night, let your heart free. May your laughter enhance the joy in the room; may you treat yourself to one day of pure happiness</p>
+                    </div>
+                    <div>
+                        <h2>Musical evening</h2>
+                        <p>Music has the power to heal; to make right what was never broken. Whatever your type is, we have everything for you! We bring to you two evenings of classical, indipop, rock, jazz, instrumental and pop music so you can treat yourself with two complete sessions of healing and magic. So, are we your type? ;)</p>
+                    </div>
+                    <div>
+                        <h2>And So Many More!!</h2>
+                        <p>Join in on the celebrations by being a part of a plethora of events like Theatrix, TEDx, Fashion shows, Improvs and so many more!!</p>
+                    </div>
+                </div>
+            </div>
+            <ul class="sci">
+                <li><a href="#"><img src="facebook.png"></a></li>
+                <li><a href="#"><img src="twitter.jpeg"></a></li>
+                <li><a href="#"><img src="instagram.png"></a></li>
+            </ul>
+            <ul class="controls">
+                <li onclick="prevSlide();prevSlideText();"><img src="left.png" alt="left"></li>
+                <li onclick="nextSlide();nextSlideText();"><img src="right.png" alt="right"></li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        const slideShow=document.getElementById('slideShow');
+        const slides=slideShow.getElementsByTagName('video');
+        var index=0;
+        function nextSlide() {
+            slides[index].classList.remove('active');
+            index=(index+1)%slides.length;
+            slides[index].classList.add('active');
+        }
+        function prevSlide() {
+            slides[index].classList.remove('active');
+            index=(index-1+slides.length)%slides.length;
+            slides[index].classList.add('active');
+        }
+
+        const slideShowText=document.getElementById('slideShowText');
+        const slidesText=slideShowText.getElementsByTagName('div');
+        var i=0;
+        function nextSlideText() {
+            slidesText[i].classList.remove('active');
+            i=(i+1)%slidesText.length;
+            slidesText[i].classList.add('active');
+        }
+        function prevSlideText() {
+            slidesText[i].classList.remove('active');
+            i=(i-1+slidesText.length)%slidesText.length;
+            slidesText[i].classList.add('active');
+        }
+
+        function toggleMenu() {
+            const menuIcon=document.querySelector('.menuIcon');
+            const navbar=document.getElementById('navbar')
+            menuIcon.classList.toggle('active');
+            navbar.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
